@@ -24,12 +24,12 @@ import java.util.concurrent.TimeoutException;
  * Created on 2014. 8. 20.
  */
 
-public class ThreadExecutor {
+public class WorkerExecutor {
 	
 	private static final int MAX_POOL = 5;
 	
 	//싱글톤 인스턴스
-	private volatile static ThreadExecutor instance ;
+	private volatile static WorkerExecutor instance ;
 	
 	//ThreadPool Size 를 지정한다.
     private volatile static ExecutorService executor = Executors.newFixedThreadPool(MAX_POOL);
@@ -37,7 +37,7 @@ public class ThreadExecutor {
 	/**
 	 * 생성자...
 	 */
-	private ThreadExecutor(){}
+	private WorkerExecutor(){}
 
 	/**
 	 * <pre>
@@ -45,14 +45,14 @@ public class ThreadExecutor {
 	 * @return
 	 * </pre>
 	 */
-	public static ThreadExecutor getInstance(){ 
+	public static WorkerExecutor getInstance(){ 
 		
 		if(instance == null){
 			
-			synchronized(ThreadExecutor.class) {
+			synchronized(WorkerExecutor.class) {
 				
 				if (instance == null) {
-                	instance = new ThreadExecutor();
+                	instance = new WorkerExecutor();
 				}
 			}
 		}

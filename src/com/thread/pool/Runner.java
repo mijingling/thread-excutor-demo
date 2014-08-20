@@ -30,7 +30,7 @@ public class Runner implements Runnable {
 	// 작업 객체를 생성함
 	private RunnerExecutor executor = RunnerExecutor.getInstance();
 	
-	private List<CallableWorker> workList = new ArrayList<CallableWorker>();
+	private List<CallableRunner> workList = new ArrayList<CallableRunner>();
 
 	public Runner(String threadName, Integer timeOut) {
 		this.threadName = threadName;
@@ -67,9 +67,9 @@ public class Runner implements Runnable {
 	 */
 	public void run() {
 
-		workList.add(new CallableWorker(this.threadName + " - 0"));
-		workList.add(new CallableWorker(this.threadName + " - 1"));
-		workList.add(new CallableWorker(this.threadName + " - 2"));
+		workList.add(new CallableRunner(this.threadName + " - 0"));
+		workList.add(new CallableRunner(this.threadName + " - 1"));
+		workList.add(new CallableRunner(this.threadName + " - 2"));
 
 		try {
 			

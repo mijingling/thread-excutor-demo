@@ -17,11 +17,11 @@ import java.util.concurrent.Callable;
  * Created on 2014. 8. 20.
  */
 
-public class CallableWorker  implements Callable<Integer> {
+public class CallableRunner  implements Callable<Integer> {
 
 	private String strData;      // worker data
     
-    public CallableWorker(String threadName)
+    public CallableRunner(String threadName)
     {
         this.strData = threadName;
     }

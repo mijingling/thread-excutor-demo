@@ -18,7 +18,7 @@ public class Test {
 	
 	public static void main(String[] s){
 		
-		ThreadExecutor executor = ThreadExecutor.getInstance();
+		WorkerExecutor executor = WorkerExecutor.getInstance();
 		
 		 try
 	        {
